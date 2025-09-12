@@ -31,6 +31,8 @@ Welcome to the Hand Detection Workshop! Follow these steps to set up your develo
 2. pyenv install 3.11.9
 3. eval "$(pyenv init -)"
 4. eval "$(pyenv virtualenv-init -)"
+5. pyenv virtualenv 3.11.9 venv311
+6. pyenv activate venv311
 
 ### Linux (Ubuntu/Debian)
 ```bash
@@ -82,13 +84,10 @@ myenv\Scripts\activate
 ```
 
 ### macOS/Linux
-```bash
-pyenv virtualenv 3.11.9 venv311
-continue with virtual env
-   ```
-   python3 --version
-   ```
-   You should see: `Python 3.11.9`
+```
+python3 --version
+```
+You should see: `Python 3.11.9`
 
 You should see `(env)` at the beginning of your terminal prompt.
 
