@@ -11,6 +11,8 @@ Welcome to the Hand Detection Workshop! Follow these steps to set up your develo
 ## Step 1: Install Python 3.11.9
 
 ### Windows
+1. Set up pyenv on your environment (check this [README](https://github.com/pyenv-win/pyenv-win) for how to do so)
+2. Download python version
 1. Go to [python.org/downloads](https://www.python.org/downloads/)
 2. Download Python 3.11.9 for Windows
 3. **Important**: During installation, check "Add Python to PATH"
@@ -19,6 +21,7 @@ Welcome to the Hand Detection Workshop! Follow these steps to set up your develo
    python --version
    ```
    You should see: `Python 3.11.9`
+
 
 ### macOS
 1. Go to [python.org/downloads](https://www.python.org/downloads/)
