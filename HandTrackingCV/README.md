@@ -10,9 +10,12 @@ Welcome to the Hand Detection Workshop! Follow these steps to set up your develo
 
 ## Step 1: Install Python 3.11.9
 
-### Windows
+### Windows (navigate to Powershell)
+**Option One:**
 1. Set up pyenv on your environment (check this [README](https://github.com/pyenv-win/pyenv-win) for how to do so)
-2. Download python version
+2. Then install python 3.11.9 through this
+
+**Option Two:**
 1. Go to [python.org/downloads](https://www.python.org/downloads/)
 2. Download Python 3.11.9 for Windows
 3. **Important**: During installation, check "Add Python to PATH"
@@ -24,14 +27,10 @@ Welcome to the Hand Detection Workshop! Follow these steps to set up your develo
 
 
 ### macOS
-1. Go to [python.org/downloads](https://www.python.org/downloads/)
-2. Download Python 3.11.9 for macOS
-3. Run the installer
-4. Verify installation by opening Terminal and typing:
-   ```
-   python3 --version
-   ```
-   You should see: `Python 3.11.9`
+1. brew install pyenv pyenv-virtualenv
+2. pyenv install 3.11.9
+3. eval "$(pyenv init -)"
+4. eval "$(pyenv virtualenv-init -)"
 
 ### Linux (Ubuntu/Debian)
 ```bash
@@ -84,11 +83,14 @@ myenv\Scripts\activate
 
 ### macOS/Linux
 ```bash
-python3.11 -m venv workshop_env
-source workshop_env/bin/activate
-```
+pyenv virtualenv 3.11.9 venv311
+continue with virtual env
+   ```
+   python3 --version
+   ```
+   You should see: `Python 3.11.9`
 
-You should see `(myenv)` at the beginning of your terminal prompt.
+You should see `(env)` at the beginning of your terminal prompt.
 
 ## Step 5: Install Dependencies
 
