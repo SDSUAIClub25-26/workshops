@@ -8,14 +8,11 @@ Welcome to the Hand Detection Workshop! Follow these steps to set up your develo
 - Internet connection for initial setup
 - Administrative privileges to install software
 
+You can also access these steps here: https://code.visualstudio.com/docs/python/python-tutorial
+
 ## Step 1: Install Python 3.11.9
 
-### Windows (navigate to Powershell)
-**Option One:**
-1. Set up pyenv on your environment (check this [README](https://github.com/pyenv-win/pyenv-win) for how to do so)
-2. Then install python 3.11.9 through this
-
-**Option Two:**
+### Windows
 1. Go to [python.org/downloads](https://www.python.org/downloads/)
 2. Download Python 3.11.9 for Windows
 3. **Important**: During installation, check "Add Python to PATH"
@@ -25,8 +22,14 @@ Welcome to the Hand Detection Workshop! Follow these steps to set up your develo
    ```
    You should see: `Python 3.11.9`
 
+**Note: If you have multiple python versions (like 3.12 or 3.13), the above command may return another version like 3.13.3. If so, follow steps below:**
+1. Run `py -0` to show all installed Python versions and you should see one for 3.11
+2. To check that you have 3.11.9 installed specifically run: `py -3.11 --version` -> should return 'Python 3.11.9'
 
-### macOS
+<img width="1795" height="807" alt="cmd-screenshot-workshop" src="https://github.com/user-attachments/assets/c0d744ce-8f7a-412d-821f-5ba276c574d2" />
+
+
+### macOS (update if needed)
 1. brew install pyenv pyenv-virtualenv
 2. pyenv install 3.11.9
 3. eval "$(pyenv init -)"
@@ -63,37 +66,32 @@ python3.11 --version
 4. Clone the repository:
    ```bash
    git clone https://github.com/SDSUAIClub25-26/WorkshopMaterials.git
-   cd HandTrackingCV
    ```
+5. Open workshop folder in VS Code:
+   ```bash
+   cd WorkshopMaterials
+   code .
+   ```
+**Don't have git?** 
+- For Windows: you can install it [here](https://git-scm.com/downloads), then run installer and follow default settings (keep clicking 'Next'), then restart VS Code
+- For Mac: You can run `brew install git` (if you have homebrew installed)
 
-   **Don't have git?** 
-   - Download the workshop files as a ZIP from the repository
-   - Extract to your Desktop
-   - Open the folder in VS Code
+## Step 4: Create a Virtual Environment in Workshop Folder
 
-## Step 4: Create a Virtual Environment
+Once you have opened 'WorkshopMaterials' folder in VS Code:
 
-In VS Code's terminal, inside the workshop folder:
+1. To open command palette, hit `Ctrl+Shift+P`, start typing 'Python: Create Environment'
+2. It should now present a list of environment types, either venv or conda. Click venv
+3. Now you should see a list of python interpreters that can be used. Select the one for Python 3.11.9
+4. A notification will now pop up showing that your environment is being created:
 
-**As a note myenv is just an arbitrary name, you can name it what you want. I usually go with .venv**
+<img width="644" height="113" alt="image" src="https://github.com/user-attachments/assets/1729f0e4-a0fb-4f0c-ac41-2ac2ed8447d4" />
 
-### Windows
-```bash
-python -m venv myenv
-myenv\Scripts\activate
-```
-
-### macOS/Linux
-```
-python3 --version
-```
-You should see: `Python 3.11.9`
-
-You should see `(env)` at the beginning of your terminal prompt.
+5. Ensure the environment is selected by going back to 'Python: Select Interpeter' from the command palette and selecting the .venv
 
 ## Step 5: Install Dependencies
 
-With your virtual environment activated:
+With your virtual environment activated, open up a terminal and run:
 
 ```bash
 pip install -r requirements.txt
@@ -104,16 +102,16 @@ This will install:
 - MediaPipe (hand detection)
 - Matplotlib (visualization)
 - NumPy (numerical computing)
-- Jupyter (notebooks)
+- ipykernel (notebooks)
 
-## Step 6: Select Python Interpreter in VS Code
+## Step 6: Select correct Python Interpreter in VS Code (if it prompts you again)
 
 1. Press `Ctrl+Shift+P` (Cmd+Shift+P on Mac)
 2. Type "Python: Select Interpreter"
 3. Choose the interpreter from your virtual environment:
    - Look for the path containing `myenv` or your venv name
 
-## Step 7: Run the imports in the completed notebook or create your own and import libraries
+## Step 7: Run the imports in the completed notebook or create your own notebook and import libraries
 
 If 'Everything Imported Successfully' is printed out you are good to go!
 
