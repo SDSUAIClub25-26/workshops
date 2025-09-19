@@ -29,13 +29,21 @@ You can also access these steps here: https://code.visualstudio.com/docs/python/
 <img width="1795" height="807" alt="cmd-screenshot-workshop" src="https://github.com/user-attachments/assets/c0d744ce-8f7a-412d-821f-5ba276c574d2" />
 
 
-### macOS (update if needed)
-1. brew install pyenv pyenv-virtualenv
-2. pyenv install 3.11.9
-3. eval "$(pyenv init -)"
-4. eval "$(pyenv virtualenv-init -)"
-5. pyenv virtualenv 3.11.9 venv311
-6. pyenv activate venv311
+### macOS
+1. Open a terminal and check if brew is installed. Run ```brew --version```. If installed, jump to step 3.
+2. Install brew by running this command:
+   ```
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   sudo xcodebuild -license accept
+   ```
+3. brew install pyenv pyenv-virtualenv
+4. pyenv install 3.11.9
+5. eval "$(pyenv init -)"
+6. eval "$(pyenv virtualenv-init -)"
+7. pyenv virtualenv 3.11.9 venv311
+8. pyenv activate venv311
+
+**Note: to deactivate the virtual environment, run** ```pyenv deactivate```.
 
 ### Linux (Ubuntu/Debian)
 ```bash
@@ -80,6 +88,7 @@ python3.11 --version
 
 Once you have opened 'WorkshopMaterials' folder in VS Code:
 
+### Windows
 1. To open command palette, hit `Ctrl+Shift+P`, start typing 'Python: Create Environment'
 2. It should now present a list of environment types, either venv or conda. Click venv
 3. Now you should see a list of python interpreters that can be used. Select the one for Python 3.11.9
@@ -88,6 +97,13 @@ Once you have opened 'WorkshopMaterials' folder in VS Code:
 <img width="644" height="113" alt="image" src="https://github.com/user-attachments/assets/1729f0e4-a0fb-4f0c-ac41-2ac2ed8447d4" />
 
 5. Ensure the environment is selected by going back to 'Python: Select Interpeter' from the command palette and selecting the .venv
+
+### MacOS
+Since we used pyenv, no local virtual envornment is needed in the project directory.
+1. Hit `Cmd+Shift+P`
+2. Search `Python: Select Interpreter`.
+3. Select the version that says `venv311`.
+4. In the HandTracking_OpenCV_Completed.ipynb file, change the interpreter in the top right to venv311
 
 ## Step 5: Install Dependencies
 
@@ -103,6 +119,8 @@ This will install:
 - Matplotlib (visualization)
 - NumPy (numerical computing)
 - ipykernel (notebooks)
+
+**Note (for Mac users): sometimes ipykernel will not download. When running the first block of code, you may get prompted to install the necessary package. Accept it and after it is downloaded, rerun the block of code.** 
 
 ## Step 6: Select correct Python Interpreter in VS Code (if it prompts you again)
 
