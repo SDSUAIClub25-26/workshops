@@ -18,8 +18,8 @@ def resize_for_display(frame, max_width=1280, max_height=720):
 def run_inference_image(model_path, image_path):
     """Run inference on a single image"""
 
-    model = YOLO(model_path, task='detect')
-    results = model(image_path)
+    model = YOLO(model_path, task='detect') # be sure to specify onnx file
+    results = model.predict(source=image_path, imgsz=512, conf=0.25)
 
     for result in results:
         img_with_boxes = result.plot()
@@ -39,7 +39,7 @@ def run_inference_video(model_path, video_path):
             break
         
         # Run inference
-        results = model(frame)
+        results = model.predict(source=frame, imgsz=512, conf=0.25, stream=True) # consider adding device='cpu'
         
         # Display results
         annotated_frame = results[0].plot()
@@ -67,7 +67,7 @@ def run_inference_webcam(model_path):
             break
         
         # Run inference
-        results = model(frame, verbose=False)  # verbose=False reduces console output
+        results = model.predict(source=frame, imgsz=512, conf=0.25, verbose=False)  # verbose=False reduces console output
         
         # Display results
         annotated_frame = results[0].plot()
