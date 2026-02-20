@@ -1,1 +1,38 @@
-.venv
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Testing / coverage / type checking
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# VS Code workspace-local files
+.vscode/
+*.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
