@@ -2,6 +2,19 @@ from ultralytics import YOLO
 import cv2
 import argparse
 
+
+def resize_for_display(frame, max_width=1280, max_height=720):
+    """Resize frame to fit within max dimensions while preserving aspect ratio."""
+    height, width = frame.shape[:2]
+
+    scale = min(max_width / width, max_height / height, 1.0)
+    if scale < 1.0:
+        new_width = int(width * scale)
+        new_height = int(height * scale)
+        return cv2.resize(frame, (new_width, new_height), interpolation=cv2.INTER_AREA)
+
+    return frame
+
 def run_inference_image(model_path, image_path):
     """Run inference on a single image"""
 
@@ -10,7 +23,8 @@ def run_inference_image(model_path, image_path):
 
     for result in results:
         img_with_boxes = result.plot()
-        cv2.imshow('Detection results', img_with_boxes)
+        display_img = resize_for_display(img_with_boxes)
+        cv2.imshow('Detection results', display_img)
         cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -29,7 +43,8 @@ def run_inference_video(model_path, video_path):
         
         # Display results
         annotated_frame = results[0].plot()
-        cv2.imshow('Video Detection', annotated_frame)
+        display_frame = resize_for_display(annotated_frame)
+        cv2.imshow('Video Detection', display_frame)
         
         # Press 'q' to quit
         if cv2.waitKey(1) & 0xFF == ord('q'):
