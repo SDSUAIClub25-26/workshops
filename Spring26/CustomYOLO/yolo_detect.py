@@ -40,9 +40,12 @@ def run_inference_video(model_path, video_path):
         
         # Run inference
         results = model.predict(source=frame, imgsz=512, conf=0.25, stream=True) # consider adding device='cpu'
-        
+
         # Display results
-        annotated_frame = results[0].plot()
+        result = next(results, None)
+        if result is None:
+            continue
+        annotated_frame = result.plot()
         display_frame = resize_for_display(annotated_frame)
         cv2.imshow('Video Detection', display_frame)
         
