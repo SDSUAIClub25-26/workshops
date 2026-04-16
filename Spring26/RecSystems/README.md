@@ -11,13 +11,13 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv ~/.venvs/recommenders --python 3.11
 source ~/.venvs/recommenders/bin/activate
 
-# 4. Install the core recommenders package and other dependencies
+### 4. Install the core recommenders package and other dependencies
 uv pip install recommenders scikit-surprise pandas matplotlib seaborn ipykernel
 
-# 5. Create a Jupyter kernel
+### 5. Create a Jupyter kernel
 python -m ipykernel install --user --name recommenders --display-name "Python (recommenders)"
 
-# 7. Within VSCode:
-#   a. Open the notebook: workshops/Spring26/RecSystems/recsys_workshop.ipynb;
-#   b. Select Jupyter kernel "Python (recommenders)";
-#   c. Run the notebook.
+### 7. Within VSCode:
+   a. Open the notebook: workshops/Spring26/RecSystems/recsys_workshop.ipynb;
+   b. Select Jupyter kernel "Python (recommenders)";
+   c. Run the notebook.
