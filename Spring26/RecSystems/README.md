@@ -2,37 +2,62 @@
 
 ## Setup Instructions:
 
-### 1. Install uv, VS Code, and VS Code Python + Jupyter Extensions
+### Prerequisites
+Install the following first:
+
+- [uv](https://docs.astral.sh/uv/)
+- VS Code
+- VS Code Python extension
+- VS Code Jupyter extension
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-
-### 2. Clone the workshops repo & navigate to directory
-
+### Clone the repository
 ```bash
-git clone https://github.com/SDSUAIClub25-26/workshops.git
-cd /workshops/Spring26/RecSystems
+git clone <your-repo-url>
+cd <your-repo-folder>
 ```
 
-### 4. Install correct python version + deps
+### Install the pinned Python version and project dependencies
 ```bash
-uv python install
+uv python install 3.11.15
 uv sync
 ```
 
-### 5. Open folder in VS Code
+This project is pinned to Python 3.11.15 and uses a locked dependency set.
 
+### Open in VS Code
 ```bash
 code .
 ```
 
-### 6. Open the notebook file.
+### Open the notebook
+Open the workshop notebook in VS Code.
 
-### 7.  In the upper-right corner, click **Select Kernel** and choose the interpreter from `.venv`.
+### Select the kernel
+In the upper-right corner of the notebook, click **Select Kernel** and choose the interpreter from:
 
-### 8. Run the cells.
+```text
+.venv
+```
+
+### Run the notebook
+You should now be able to run all cells.
+
+## Troubleshooting
+
+### Wrong Python version
+If VS Code selects the wrong interpreter, manually choose the one inside `.venv`.
+
+### Fresh reinstall
+If your environment gets into a bad state, delete the local environment and resync:
+
+```bash
+rm -rf .venv
+uv sync
+```
 
 
 ## Resources:
