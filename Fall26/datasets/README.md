@@ -1,17 +1,3 @@
-## Advertising — `Advertising.csv`
-
-**Goal:** Predict product sales based on advertising spending across TV, radio, and newspaper advertising.
-
-**Problem Type:** Regression
-
-**Suggested Model:** `LinearRegression`
-
-**Target:** `Sales`
-
-**Source:** [Kaggle](https://www.kaggle.com/datasets/ashydv/advertising-dataset)
-
----
-
 ## Concrete Compressive Strength — `Concrete_Data.csv`
 
 **Goal:** Predict the compressive strength of concrete based on ingredients such as cement, water, aggregates, and the age of the concrete.
@@ -23,6 +9,20 @@
 **Target:** Concrete compressive strength
 
 **Source:** [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/165/concrete-compressive-strength)
+
+---
+
+## Advertising — `advertising.csv`
+
+**Goal:** Predict product sales based on advertising spending across TV, radio, and newspaper advertising.
+
+**Problem Type:** Regression
+
+**Suggested Model:** `LinearRegression`
+
+**Target:** `Sales`
+
+**Source:** [Kaggle](https://www.kaggle.com/datasets/ashydv/advertising-dataset)
 
 ---
 
