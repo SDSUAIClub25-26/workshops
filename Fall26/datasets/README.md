@@ -40,9 +40,9 @@
 
 ---
 
-## Melbourne Housing — `melb_data.csv`
+## Housing — `melb_data.csv`
 
-**Goal:** Predict the price of a home in Melbourne using features such as number of rooms, bathrooms, land size, location, and other property information.
+**Goal:** Predict the price of a home in using features such as number of rooms, bathrooms, land size, location, and other property information.
 
 **Problem Type:** Regression
 
